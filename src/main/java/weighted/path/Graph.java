@@ -5,15 +5,13 @@ import java.util.List;
 
 class Graph {
 
-    private int nrOfNodes;
     private List<Node> nodes;
 
     Graph(String[] nodes) {
-        this.nrOfNodes = nodes.length;
         this.nodes = new ArrayList<>();
 
-        for (int i = 0; i < this.nrOfNodes; i++) {
-            this.nodes.add(new Node(nodes[i], i == 0, i == this.nrOfNodes - 1));
+        for (int i = 0; i < nodes.length; i++) {
+            this.nodes.add(new Node(nodes[i], i == 0, i == nodes.length - 1));
         }
     }
 
@@ -38,10 +36,6 @@ class Graph {
             }
         }
         return path.toString();
-    }
-
-    int getNrOfNodes() {
-        return nrOfNodes;
     }
 
     List<Node> getNodes() {
